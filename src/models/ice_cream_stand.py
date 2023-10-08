@@ -15,17 +15,27 @@ class IceCreamStand(Restaurant):
     def flavors_available(self):
         """Percorra a lista de sabores disponíveis e imprima."""
         if self.flavors:
-            print("\nNo momento temos os seguintes sabores de sorvete disponíveis:")
+            #troque print por return
+            #melhoria2 transformar os dois textos em apenas 1 e colocá-los no mesmo retorno, corrigir erros de digitação
+            #print("\nNo momento temos os seguintes sabores de sorvete disponíveis:")
+            #for flavor in self.flavors:
+            #    print(f"\t-{flavor}")
+            message = "\nNo momento temos os seguintes sabores de sorvete disponíveis:"
             for flavor in self.flavors:
-                print(f"\t-{flavor}")
+                message += f"\n\t-{flavor}"
+            return message
         else:
-            print("Estamos sem estoque atualmente!")
+            #troque print por return
+            return "Estamos sem estoque atualmente!"
 
     def find_flavor(self, flavor):
         """Verifica se o sabor informado está disponível."""
         if self.flavors:
             if flavor in self.flavors:
-                print(f"Temos no momento {self.flavors}!")
+                #troque print por return
+                #melhoria3: se o método deve verificar se o sabor está disponível, mensagem precisa ser melhorada, porque ela informa toda a lista de sabores.
+                #print(f"Temos no momento {self.flavors}!")
+                return "Sabor disponível"
             else:
                 print(f"Não temos no momento {self.flavors}!")
         else:
@@ -33,11 +43,12 @@ class IceCreamStand(Restaurant):
 
     def add_flavor(self, flavor):
         """Add o sabor informado ao estoque."""
-        if self.flavors:
-            if flavor in self.flavors:
-                print("\nSabor já disponivel!")
-            else:
-                self.flavors.append(flavor)
-                print(f"{flavor} adicionado ao estoque!")
+        #if self.flavors:
+        #bug5: mesmo que não exista nenhum sabor disponível, deve ser possível adicionar novo sabor ao estoque
+        if flavor in self.flavors:
+            return "\nSabor já disponivel!"
         else:
-            print("Estamos sem estoque atualmente!")
+            self.flavors.append(flavor)
+            return f"{flavor} adicionado ao estoque!"
+        #else:
+        #    return"Estamos sem estoque atualmente!"
