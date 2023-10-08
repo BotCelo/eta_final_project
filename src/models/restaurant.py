@@ -13,7 +13,7 @@ class Restaurant:
         #melhoria1: alterar print para return
         #bug1: self.cuisine_type sendo exibido após string que descreve nome do restaurente, deveria ser exibido o self.restaurant_name
         #melhoria2: tranformar esses dois prints em apenas um return de uma string utilizando quebra de linha (/n)
-        #melhoria2: corrigir typos, manter string em apenas um idioma, alteração de alguns tempos verbais para mensagem ficar mais coerente com a regra de negócio.
+        #melhoria3: corrigir typos, manter string em apenas um idioma, alteração de alguns tempos verbais para mensagem ficar mais coerente com a regra de negócio.
         #print(f"Esse restaturante chama {self.cuisine_type} and serve {self.cuisine_type}.")
         #print(f"Esse restaturante está servindo {self.number_served} consumidores desde que está aberto.")
         return f"Esse restaurante se chama {self.restaurant_name} e serve {self.cuisine_type}.\n" \
@@ -47,7 +47,8 @@ class Restaurant:
         """Defina o número total de pessoas atendidas por este restaurante até o momento."""
         if self.open:
             self.number_served = total_customers
-            #melhoria3: configurar return para indicar que número de clientes foi atualizado
+            #melhoria4: adicionar return para indicar que número de clientes foi atualizado
+            return f"Número de clientes alterado para {total_customers}"
         else:
             # substituir print por return
             print(f"{self.restaurant_name} está fechado!")

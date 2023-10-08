@@ -16,7 +16,7 @@ class IceCreamStand(Restaurant):
         """Percorra a lista de sabores disponíveis e imprima."""
         if self.flavors:
             #troque print por return
-            #melhoria2 transformar os dois textos em apenas 1 e colocá-los no mesmo retorno, corrigir erros de digitação
+            #melhoria5 transformar os dois textos em apenas 1 e colocá-los no mesmo retorno, corrigir erros de digitação
             #print("\nNo momento temos os seguintes sabores de sorvete disponíveis:")
             #for flavor in self.flavors:
             #    print(f"\t-{flavor}")
@@ -33,7 +33,6 @@ class IceCreamStand(Restaurant):
         if self.flavors:
             if flavor in self.flavors:
                 #troque print por return
-                #melhoria3: se o método deve verificar se o sabor está disponível, mensagem precisa ser melhorada, porque ela informa toda a lista de sabores.
                 #print(f"Temos no momento {self.flavors}!")
                 return "Sabor disponível"
             else:
